@@ -20,8 +20,9 @@ function register(req, res) {
   Users.add(user)
 
     .then(user => {
-      console.log(user);
+      console.log("add user:", user);
       const token = generateToken(user);
+      console.log("registration token:", token);
       res.status(201).json({ user, token });
     })
     .catch(error => {

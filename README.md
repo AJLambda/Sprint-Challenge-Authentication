@@ -49,6 +49,36 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
    The signature is the header and payload encoded and stringed together, and then signed with a secret.
 
+## What do you find difficult about the Sprint?
+
+    The file structure and the way the routes were handled and exported was a little confusing to me at first
+
+## What did you find easy about the Sprint?
+
+    The project already boilerplated and migrations/database already included helped things go faster
+
+## Is there anything that you could not complete on today's Sprint?
+
+    Did not have time for the stretch
+
+## Are there any concepts that you find that you don't understand that was taught from the week?
+
+    Specific use cases of when sessions/cookies may be better to use than tokens. I think I just need to watch more videos / read more articles of a higher level view.
+
+## Explain where token should be stored on the client.
+
+    We can storage it italocalstorage, however this is not very safe against attacks.
+
+    Storing the token in an http-only cookie, client side, can be a safer option. These cookies cannot be read by JavaScript.
+
+## Explain how logging out with tokens works.
+
+    You can clear the token (ie from localstorage) but you cannot forcefully delete or invalidate the token. So, in this case, logging out with tokens doesn't truly work.
+
+## Explain the difference between tokens and cookies in detail.
+
+    The main difference between cookies and tokens for auth is where the state is kept. When using sessions/cookies, state is kept in the server. When using Tokens, state is kept in the Token (client)
+
 ## Project Set Up
 
 Follow these steps to set up and work on your project:
