@@ -29,42 +29,88 @@ Implement an User Authentication System in order to access the jokes from the Jo
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 1. What is the purpose of using _sessions_?
+
+   Sessions give us a way to persist data across requests. Sessions can make for a good user experience because you can set up them to where if you change pages the server will remember who you are, you won't have to login again.
+
 1. What does bcrypt do to help us store passwords in a secure manner.
+
+   Bcrypt helps us hash our passwords by giving us a Key Derivation Function or hashing function, allowing our passwords to be stored as cryptographic hashes instead of plain text. The one way function it uses also makes it near impossible to turn the hash back into the password text.
+
 1. What does bcrypt do to slow down attackers?
+
+   Bcrypt adds time to the algorithm. Hashing rounds hash the information multiple times.
+
 1. What are the three parts of the JSON Web Token?
+
+   The header, the payload and the signature.
+
+   The header contains the algorithm and the token type.
+   The payload includes claims (permissions), information, or any data we want to store in the token.
+
+   The signature is the header and payload encoded and stringed together, and then signed with a secret.
+
+## What do you find difficult about the Sprint?
+
+    The file structure and the way the routes were handled and exported was a little confusing to me at first
+
+## What did you find easy about the Sprint?
+
+    The project already boilerplated and migrations/database already included helped things go faster
+
+## Is there anything that you could not complete on today's Sprint?
+
+    Did not have time for the stretch
+
+## Are there any concepts that you find that you don't understand that was taught from the week?
+
+    Specific use cases of when sessions/cookies may be better to use than tokens. I think I just need to watch more videos / read more articles of a higher level view.
+
+## Explain where token should be stored on the client.
+
+    We can storage it italocalstorage, however this is not very safe against attacks.
+
+    Storing the token in an http-only cookie, client side, can be a safer option. These cookies cannot be read by JavaScript.
+
+## Explain how logging out with tokens works.
+
+    You can clear the token (ie from localstorage) but you cannot forcefully delete or invalidate the token. So, in this case, logging out with tokens doesn't truly work.
+
+## Explain the difference between tokens and cookies in detail.
+
+    The main difference between cookies and tokens for auth is where the state is kept. When using sessions/cookies, state is kept in the server. When using Tokens, state is kept in the Token (client)
 
 ## Project Set Up
 
 Follow these steps to set up and work on your project:
 
-- [ ] Create a forked copy of this project.
-- [ ] Add PM as collaborator on Github.
-- [ ] Clone your OWN version of Repo (Not Lambda's by mistake!).
-- [ ] Create a new Branch on the clone: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on this Branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
+- [x] Create a forked copy of this project.
+- [x] Add PM as collaborator on Github.
+- [x] Clone your OWN version of Repo (Not Lambda's by mistake!).
+- [x] Create a new Branch on the clone: git checkout -b `<firstName-lastName>`.
+- [x] Implement the project on this Branch, committing changes regularly.
+- [x] Push commits: git push origin `<firstName-lastName>`.
 
 Follow these steps for completing your project:
 
-- [ ] `cd` into the root of the project and run `yarn` to install dependencies.
-- [ ] Once you have your `node_modules` go ahead and run `yarn server` or `npm run server` to start your node server.
-- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's  Repo).
-- [ ] Add your Project Manager as a Reviewer on the Pull-request
-- [ ] PM then will count the HW as done by  merging the branch back into master.
+- [x] `cd` into the root of the project and run `yarn` to install dependencies.
+- [x] Once you have your `node_modules` go ahead and run `yarn server` or `npm run server` to start your node server.
+- [x] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repo).
+- [x] Add your Project Manager as a Reviewer on the Pull-request
+- [x] PM then will count the HW as done by merging the branch back into master.
 
 Helpful Tip on Testing this Project:
 
-- [ ] **TEST** this project using **`POSTMAN`**.
+- [x] **TEST** this project using **`POSTMAN`**.
 
 ## Minimum Viable Product
 
-- [ ] Implement the `register` function inside `/config/routes.js`.
-- [ ] Implement the `login` function inside `/config/routes.js`.
-- [ ] Use JSON Web Tokens for authentication.
+- [x] Implement the `register` function inside `/config/routes.js`.
+- [x] Implement the `login` function inside `/config/routes.js`.
+- [x] Use JSON Web Tokens for authentication.
 
 **Note** The migrations and a database with empty users is already included
 
-- [ ] Add the authentication related code. If everything is done correctly, visiting `/api/jokes` should return a list of jokes.
+- [x] Add the authentication related code. If everything is done correctly, visiting `/api/jokes` should return a list of jokes.
 
 ## Stretch Problem: Build a front end to interface with your User Auth System
 
